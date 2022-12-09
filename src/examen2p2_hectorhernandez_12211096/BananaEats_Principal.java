@@ -51,7 +51,7 @@ public class BananaEats_Principal extends javax.swing.JFrame {
         label_banana_eats.setFont(new java.awt.Font("Showcard Gothic", 0, 24)); // NOI18N
         label_banana_eats.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_banana_eats.setText("Banana Eats");
-        jPanel1.add(label_banana_eats, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 21, 590, 33));
+        jPanel1.add(label_banana_eats, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, 590, 33));
 
         text_area.setColumns(10);
         text_area.setRows(2);
@@ -60,7 +60,7 @@ public class BananaEats_Principal extends javax.swing.JFrame {
         text_area.setMaximumSize(new java.awt.Dimension(300, 300));
         jScrollPane1.setViewportView(text_area);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 590, 410));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 590, 440));
 
         bt_tarjeta_navidad.setBackground(new java.awt.Color(102, 255, 255));
         bt_tarjeta_navidad.setFont(new java.awt.Font("Segoe UI Black", 0, 13)); // NOI18N
@@ -112,19 +112,19 @@ public class BananaEats_Principal extends javax.swing.JFrame {
         fn.setVisible(true);
         
     }//GEN-LAST:event_bt_tarjeta_navidadMouseClicked
-   
+
     public static void LlenarMatriz(JTextArea ta) {
         //Linea superior
         String s = "";
-        for (int i = 0; i < 33; i++) {
+        for (int i = 0; i < 66; i++) {
             s += "*";
         }
         s += "\n";
 
         //centro de la forma
-        for (int i = 0; i < 13; i++) {
+        for (int i = 0; i < 26; i++) {
             s += "*";
-            for (int j = 0; j < 46; j++) {
+            for (int j = 0; j < 94; j++) {
                 s += " ";
             }
             s += "*";
@@ -132,7 +132,7 @@ public class BananaEats_Principal extends javax.swing.JFrame {
         }
 
         //Linea inferior
-        for (int i = 0; i < 33; i++) {
+        for (int i = 0; i < 66; i++) {
             s += "*";
         }
         ta.setText(s);

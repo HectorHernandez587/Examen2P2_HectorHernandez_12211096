@@ -52,13 +52,13 @@ public class Feliz_Navidad extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Sé que tendras mucho exito en tu vida y tu carrera ya como un profesional");
+        jLabel5.setText("Sé que tendran mucho éxito en su vida y en su carrera ya como profesionales");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Gracias por ser tan buen instructor James");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, 320, -1));
+        jLabel4.setText("Gracias por ser tan buenos instructores James, Nuila y Pamela");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 470, 450, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/elfonavidad-removebg-preview_1.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 360, 200, 190));
