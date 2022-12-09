@@ -28,37 +28,66 @@ public class BananaEats_Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        label_banana_eats = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        text_area = new javax.swing.JTextArea();
+        bt_tarjeta_navidad = new javax.swing.JButton();
+        bt_guardar = new javax.swing.JButton();
+        bt_cargar = new javax.swing.JButton();
+        bt_comenzar = new javax.swing.JButton();
+        tf_instrucciones = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Showcard Gothic", 0, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Banana Eats");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 21, 780, 33));
+        label_banana_eats.setFont(new java.awt.Font("Showcard Gothic", 0, 24)); // NOI18N
+        label_banana_eats.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_banana_eats.setText("Banana Eats");
+        jPanel1.add(label_banana_eats, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 21, 590, 33));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        text_area.setColumns(20);
+        text_area.setRows(5);
+        text_area.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 0, 0)));
+        jScrollPane1.setViewportView(text_area);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 680, 490));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 590, 410));
 
-        jButton1.setBackground(new java.awt.Color(255, 153, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 13)); // NOI18N
-        jButton1.setText("Tarjeta Navideña");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 563, 140, 30));
+        bt_tarjeta_navidad.setBackground(new java.awt.Color(102, 255, 255));
+        bt_tarjeta_navidad.setFont(new java.awt.Font("Segoe UI Black", 0, 13)); // NOI18N
+        bt_tarjeta_navidad.setText("Tarjeta Navideña");
+        bt_tarjeta_navidad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_tarjeta_navidadMouseClicked(evt);
+            }
+        });
+        jPanel1.add(bt_tarjeta_navidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 140, 40));
+
+        bt_guardar.setBackground(new java.awt.Color(255, 255, 255));
+        bt_guardar.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        bt_guardar.setText("Guardar");
+        jPanel1.add(bt_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 530, 140, 50));
+
+        bt_cargar.setBackground(new java.awt.Color(255, 255, 255));
+        bt_cargar.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        bt_cargar.setText("Cargar");
+        jPanel1.add(bt_cargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 530, 150, 50));
+
+        bt_comenzar.setBackground(new java.awt.Color(255, 255, 255));
+        bt_comenzar.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        bt_comenzar.setText("Comenzar");
+        jPanel1.add(bt_comenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 530, 140, 50));
+
+        tf_instrucciones.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        tf_instrucciones.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.add(tf_instrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 480, 590, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 826, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -67,6 +96,14 @@ public class BananaEats_Principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bt_tarjeta_navidadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_tarjeta_navidadMouseClicked
+        // TODO add your handling code here:
+        Feliz_Navidad fn = new Feliz_Navidad();
+        this.setVisible(false);
+        fn.setVisible(true);
+        
+    }//GEN-LAST:event_bt_tarjeta_navidadMouseClicked
 
     /**
      * @param args the command line arguments
@@ -104,10 +141,14 @@ public class BananaEats_Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton bt_cargar;
+    private javax.swing.JButton bt_comenzar;
+    private javax.swing.JButton bt_guardar;
+    private javax.swing.JButton bt_tarjeta_navidad;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel label_banana_eats;
+    private javax.swing.JTextArea text_area;
+    private javax.swing.JTextField tf_instrucciones;
     // End of variables declaration//GEN-END:variables
 }
