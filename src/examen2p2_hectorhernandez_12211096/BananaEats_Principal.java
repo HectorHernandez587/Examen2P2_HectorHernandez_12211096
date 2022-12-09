@@ -54,6 +54,7 @@ public class BananaEats_Principal extends javax.swing.JFrame {
         jPanel1.add(label_banana_eats, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, 590, 33));
 
         text_area.setColumns(10);
+        text_area.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         text_area.setRows(2);
         text_area.setTabSize(3);
         text_area.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 0, 0)));
@@ -116,15 +117,15 @@ public class BananaEats_Principal extends javax.swing.JFrame {
     public static void LlenarMatriz(JTextArea ta) {
         //Linea superior
         String s = "";
-        for (int i = 0; i < 66; i++) {
+        for (int i = 0; i < 33; i++) {
             s += "*";
         }
         s += "\n";
 
         //centro de la forma
-        for (int i = 0; i < 26; i++) {
+        for (int i = 0; i < 13; i++) {
             s += "*";
-            for (int j = 0; j < 94; j++) {
+            for (int j = 0; j < 33-2; j++) {
                 s += " ";
             }
             s += "*";
@@ -132,7 +133,7 @@ public class BananaEats_Principal extends javax.swing.JFrame {
         }
 
         //Linea inferior
-        for (int i = 0; i < 66; i++) {
+        for (int i = 0; i < 33; i++) {
             s += "*";
         }
         ta.setText(s);
