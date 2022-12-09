@@ -6,6 +6,7 @@
 package examen2p2_hectorhernandez_12211096;
 
 import java.awt.TextArea;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
 /**
@@ -76,6 +77,11 @@ public class BananaEats_Principal extends javax.swing.JFrame {
         bt_guardar.setBackground(new java.awt.Color(255, 255, 255));
         bt_guardar.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         bt_guardar.setText("Guardar");
+        bt_guardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_guardarMouseClicked(evt);
+            }
+        });
         jPanel1.add(bt_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 530, 140, 50));
 
         bt_cargar.setBackground(new java.awt.Color(255, 255, 255));
@@ -113,6 +119,23 @@ public class BananaEats_Principal extends javax.swing.JFrame {
         fn.setVisible(true);
         
     }//GEN-LAST:event_bt_tarjeta_navidadMouseClicked
+
+    private void bt_guardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_guardarMouseClicked
+        // TODO add your handling code here:
+        String instru = tf_instrucciones.getText();
+        int[] estado_banana = {2,3};
+        int[] estado_manzana = {4,5};
+
+        Partida p = new Partida(estado_banana, estado_manzana, instru);
+
+        adminPartidas ap = new adminPartidas("./PartidasGuardadas.hector");
+        ap.cargarArchivo();
+        ap.setAlumno(p);
+        ap.escribirArchivo();
+        
+        JOptionPane.showMessageDialog(this, "Partida guardada exitosamente");
+        tf_instrucciones.setText("");
+    }//GEN-LAST:event_bt_guardarMouseClicked
 
     public static void LlenarMatriz(JTextArea ta) {
         //Linea superior

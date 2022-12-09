@@ -8,13 +8,15 @@ package examen2p2_hectorhernandez_12211096;
 public class Partida {
     private int[] estado_banana;
     private int[] estado_manzana;
+    private String instrucciones;
 
     public Partida() {
     }
 
-    public Partida(int[] estado_banana, int[] estado_manzana) {
+    public Partida(int[] estado_banana, int[] estado_manzana, String instrucciones) {
         this.estado_banana = estado_banana;
         this.estado_manzana = estado_manzana;
+        this.instrucciones = instrucciones;
     }
 
     public int[] getEstado_banana() {
@@ -33,10 +35,20 @@ public class Partida {
         this.estado_manzana = estado_manzana;
     }
 
+    public String getInstrucciones() {
+        return instrucciones;
+    }
+
+    public void setInstrucciones(String instrucciones) {
+        this.instrucciones = instrucciones;
+    }
+
     @Override
     public String toString() {
-        return "Partida{" + "estado_banana=" + estado_banana + ", estado_manzana=" + estado_manzana + '}';
+        return "Partida{" + "estado_banana=" + estado_banana + ", estado_manzana=" + estado_manzana + ", instrucciones=" + instrucciones + '}';
     }
+
+    
     
     
     
