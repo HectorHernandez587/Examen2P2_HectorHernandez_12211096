@@ -5,17 +5,23 @@
  */
 package examen2p2_hectorhernandez_12211096;
 
+import java.awt.TextArea;
+import javax.swing.JTextArea;
+
 /**
  *
  * @author Hector
- */
+*/
 public class BananaEats_Principal extends javax.swing.JFrame {
+
+    
 
     /**
      * Creates new form BananaEats_Principal
      */
     public BananaEats_Principal() {
         initComponents();
+        LlenarMatriz(text_area);
     }
 
     /**
@@ -47,9 +53,11 @@ public class BananaEats_Principal extends javax.swing.JFrame {
         label_banana_eats.setText("Banana Eats");
         jPanel1.add(label_banana_eats, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 21, 590, 33));
 
-        text_area.setColumns(20);
-        text_area.setRows(5);
+        text_area.setColumns(10);
+        text_area.setRows(2);
+        text_area.setTabSize(3);
         text_area.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 0, 0)));
+        text_area.setMaximumSize(new java.awt.Dimension(300, 300));
         jScrollPane1.setViewportView(text_area);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 590, 410));
@@ -104,7 +112,33 @@ public class BananaEats_Principal extends javax.swing.JFrame {
         fn.setVisible(true);
         
     }//GEN-LAST:event_bt_tarjeta_navidadMouseClicked
+   
+    public static void LlenarMatriz(JTextArea ta) {
+        //Linea superior
+        String s = "";
+        for (int i = 0; i < 33; i++) {
+            s += "*";
+        }
+        s += "\n";
 
+        //centro de la forma
+        for (int i = 0; i < 13; i++) {
+            s += "*";
+            for (int j = 0; j < 46; j++) {
+                s += " ";
+            }
+            s += "*";
+            s += "\n";
+        }
+
+        //Linea inferior
+        for (int i = 0; i < 33; i++) {
+            s += "*";
+        }
+        ta.setText(s);
+
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -151,4 +185,6 @@ public class BananaEats_Principal extends javax.swing.JFrame {
     private javax.swing.JTextArea text_area;
     private javax.swing.JTextField tf_instrucciones;
     // End of variables declaration//GEN-END:variables
+    static String matriz[][] = new String[13][33];
+    //static javax.swing.JTextArea textArea = new javax.swing.JTextArea();
 }
