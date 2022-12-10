@@ -6,8 +6,7 @@
 package examen2p2_hectorhernandez_12211096;
 
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -76,8 +75,6 @@ public class Hilo implements Runnable {
         if (largo < instrucciones.length()) {
             String ultimo = instrucciones.substring(instrucciones.length() - 1);
             char[] lastChar = ultimo.toCharArray();
-            //int coor_x = 1 + r.nextInt(11);
-            //int coor_y = 1 + r.nextInt(31);
             int coor_x = bs.getX();
             int coor_y = bs.getY();
 
@@ -87,8 +84,7 @@ public class Hilo implements Runnable {
                         //Arriba
                         bs.setY(coor_y - 1);
                         coor_y = bs.getY();
-
-                        Thread.sleep(1000);
+                        Thread.sleep(100);
                     } catch (InterruptedException ex) {
 
                     }
@@ -96,8 +92,10 @@ public class Hilo implements Runnable {
                 } else if (lastChar[lastChar.length - 1] == 'S' || lastChar[lastChar.length - 1] == 's') {
                     try {
                         //Abajo
+                        bs.setY(coor_y + 1);
+                        coor_y = bs.getY();
 
-                        Thread.sleep(1000);
+                        Thread.sleep(100);
                     } catch (InterruptedException ex) {
 
                     }
@@ -105,8 +103,10 @@ public class Hilo implements Runnable {
                 } else if (lastChar[lastChar.length - 1] == 'A' || lastChar[lastChar.length - 1] == 'a') {
                     try {
                         //Izquierda
+                        bs.setX(coor_x - 1);
+                        coor_x = bs.getX();
 
-                        Thread.sleep(1000);
+                        Thread.sleep(100);
                     } catch (InterruptedException ex) {
 
                     }
@@ -114,12 +114,25 @@ public class Hilo implements Runnable {
                 } else if (lastChar[lastChar.length - 1] == 'D' || lastChar[lastChar.length - 1] == 'd') {
                     try {
                         //Derecha
+                        bs.setX(coor_x + 1);
+                        coor_x = bs.getX();
 
-                        Thread.sleep(1000);
+                        Thread.sleep(100);
                     } catch (InterruptedException ex) {
 
                     }
 
+                }
+
+                if (bs.getX() == 0 || bs.getX() == 32 || bs.getY() == 0 || bs.getX() == 32) {
+                    JOptionPane.showMessageDialog(null, "Ha perdido");
+                    bs.setX(13);
+                    bs.setY(8);
+                    break;
+                }
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException ex) {
                 }
 
             }
